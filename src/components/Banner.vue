@@ -17,7 +17,7 @@ export default {
         "https://w.wallhaven.cc/full/z8/wallhaven-z8mq8y.jpg",
         "https://w.wallhaven.cc/full/rd/wallhaven-rddgwm.jpg",
         "https://w.wallhaven.cc/full/pk/wallhaven-pk8pzj.png",
-        "https://w.wallhaven.cc/full/6q/wallhaven-6qlv6q.jpg",
+        // "https://w.wallhaven.cc/full/6q/wallhaven-6qlv6q.jpg",
       ]
     };
   },
