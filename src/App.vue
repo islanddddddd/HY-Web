@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <Nav></Nav>
+    <Banner></Banner>
   </div>
 </template>
 
 <script>
 
-import Nav from "@/components/Nav";
+import Banner from "@/components/Banner";
 
 export default {
   name: 'app',
   components: {
-    Nav
+    Banner
   }
 }
 </script>
