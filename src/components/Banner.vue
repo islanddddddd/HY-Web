@@ -1,8 +1,12 @@
 <template>
   <div>
     <el-carousel>
-      <el-carousel-item v-for="item in imglist" :key="item"
-                        :style="{background:'url('+item+')',backgroundSize: '100% auto'}">
+      <el-carousel-item v-for="item in imgList" :key="item">
+        <el-image
+            style="height: 100%"
+            :src="item"
+            fit="cover">
+        </el-image>
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -13,7 +17,7 @@ export default {
   name: "Banner",
   data: function () {
     return {
-      imglist: [
+      imgList: [
         "https://w.wallhaven.cc/full/z8/wallhaven-z8mq8y.jpg",
         "https://w.wallhaven.cc/full/rd/wallhaven-rddgwm.jpg",
         "https://w.wallhaven.cc/full/pk/wallhaven-pk8pzj.png",
@@ -29,6 +33,7 @@ export default {
 .el-carousel {
   height: 50vh;
 }
+
 .el-carousel__item {
   height: 50vh;
 }

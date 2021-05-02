@@ -8,7 +8,8 @@
               <el-image
                   style="width: 100px; height: 100px"
                   :src="item.imgUrl"
-                  fit="cover"></el-image>
+                  fit="cover">
+              </el-image>
             </el-col>
             <el-col :span="20">
               <h4>{{ item.title }}</h4>
