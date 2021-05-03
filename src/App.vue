@@ -9,7 +9,9 @@
           </div>
         </el-col>
         <el-col :span="8">
-          <div id="home_other"></div>
+          <div id="home_other">
+            <Twitter></Twitter>
+          </div>
         </el-col>
       </el-row>
     </div>
@@ -20,10 +22,12 @@
 
 import Banner from "@/components/Banner";
 import News from "@/components/News";
+import Twitter from "@/components/Twitter";
 
 export default {
   name: 'app',
   components: {
+    Twitter,
     News,
     Banner
   }
