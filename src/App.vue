@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Nav></Nav>
     <Banner></Banner>
     <div id="home_content">
       <el-row :gutter="20">
@@ -23,10 +24,12 @@
 import Banner from "@/components/Banner";
 import News from "@/components/News";
 import Twitter from "@/components/Twitter";
+import Nav from "@/components/Nav";
 
 export default {
   name: 'app',
   components: {
+    Nav,
     Twitter,
     News,
     Banner

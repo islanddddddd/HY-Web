@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="banner">
     <el-carousel>
       <el-carousel-item v-for="item in imgList" :key="item">
         <el-image
@@ -30,11 +30,14 @@ export default {
 </script>
 
 <style scoped>
+/*#banner{*/
+/*  margin: 0 15vw 0 15vw;*/
+/*}*/
 .el-carousel {
-  height: 50vh;
+  height: 30vw;
 }
 
 .el-carousel__item {
-  height: 50vh;
+  height: 30vw;
 }
 </style>
