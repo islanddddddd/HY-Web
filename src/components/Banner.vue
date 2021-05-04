@@ -30,9 +30,10 @@ export default {
 </script>
 
 <style scoped>
-/*#banner{*/
-/*  margin: 0 15vw 0 15vw;*/
-/*}*/
+#banner{
+  /*margin: 0 15vw 0 15vw;*/
+  /*z-index: -1;*/
+}
 .el-carousel {
   height: 30vw;
 }

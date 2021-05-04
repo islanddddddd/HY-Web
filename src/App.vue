@@ -39,8 +39,8 @@ export default {
 
 <style>
 #home_other {
-  height: 50vh;
-  background-color: deepskyblue;
+  /*height: 50vh;*/
+  /*background-color: deepskyblue;*/
 }
 
 #home_news {
