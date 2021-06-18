@@ -1,9 +1,9 @@
 <template>
   <div id="banner">
-    <el-carousel>
+    <el-carousel arrow="never">
       <el-carousel-item v-for="item in imgList" :key="item">
         <el-image
-            style="height: 100%"
+            style="width: 100%;"
             :src="item"
             fit="cover">
         </el-image>
@@ -35,10 +35,10 @@ export default {
   /*z-index: -1;*/
 }
 .el-carousel {
-  height: 30vw;
+  height: 28.125vw;
 }
 
 .el-carousel__item {
-  height: 30vw;
+  height: 28.125vw;
 }
 </style>

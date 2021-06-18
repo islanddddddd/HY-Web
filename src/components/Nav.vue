@@ -1,38 +1,48 @@
 <template>
   <div id="nav">
-    <el-affix>
-      <el-menu class="el-menu-demo" mode="horizontal" text-color="#919398" active-text-color="#919398">
-        <el-row type="flex" class="row-bg" justify="space-around">
-          <el-col :span="6">
-            <el-menu-item index="1">
-              <i>Title</i>
-            </el-menu-item>
-          </el-col>
-          <el-col :span="4">
-            <el-menu-item index="1">
-              <i class="el-icon-news"> NEWS</i>
-            </el-menu-item>
-          </el-col>
-          <el-col :span="4">
-            <el-menu-item index="1">
-              <i class="el-icon-s-platform"> 新作情报</i>
-            </el-menu-item>
-          </el-col>
-          <el-col :span="4">
-            <div>
-              <el-menu-item index="1">
-                <i class="el-icon-chat-round"> Blog</i>
-              </el-menu-item>
-            </div>
-          </el-col>
-          <el-col :span="6">
-            <el-menu-item index="1">
-              其他链接
-            </el-menu-item>
-          </el-col>
-        </el-row>
-      </el-menu>
-    </el-affix>
+    <el-menu id="mdNav" :default-active="activeIndex" @select="handleSelect" class="el-menu-demo" mode="horizontal"
+             text-color="#919398">
+      <el-row type="flex" class="row-bg" justify="space-around">
+
+        <el-col :span="6">
+          <el-menu-item>
+            <i>Title</i>
+          </el-menu-item>
+        </el-col>
+
+        <el-col :span="6" v-for="item in navItemList" :key="item">
+          <el-menu-item>
+            <i :class="item.i"> {{ item.title }}</i>
+          </el-menu-item>
+        </el-col>
+
+      </el-row>
+    </el-menu>
+
+    <el-menu id="xsNav" :default-active="activeIndex" @select="handleSelect" class="el-menu-demo" mode="horizontal"
+             text-color="#919398">
+      <el-row type="flex" class="row-bg" justify="space-around">
+        <el-col :span="20">
+          <el-menu-item index="1">
+            <i>Title</i>
+          </el-menu-item>
+        </el-col>
+        <el-col :span="4">
+          <el-menu-item index="2">
+            <el-dropdown><span class="el-dropdown-link"><i class="el-icon-arrow-down el-icon--right"></i></span>
+              <template #dropdown>
+                <el-dropdown-menu v-for="item in navItemList" :key="item">
+                  <el-dropdown-item>
+                    <el-link :underline="false" :href="item.url">{{ item.title }}</el-link>
+                  </el-dropdown-item>
+                </el-dropdown-menu>
+              </template>
+            </el-dropdown>
+          </el-menu-item>
+        </el-col>
+      </el-row>
+    </el-menu>
+
   </div>
 </template>
 
@@ -40,9 +50,21 @@
 export default {
   name: "Nav",
   data() {
-    return {};
+    return {
+      activeIndex: '1',
+      activeIndex2: '1',
+      navItemList: {
+        "1": {"title": "NEWS", "i": "el-icon-news", "url": ""},
+        "2": {"title": "作品情报", "i": "el-icon-s-platform", "url": ""},
+        "3": {"title": "BLOG", "i": "el-icon-chat-round", "url": ""},
+      }
+    };
   },
-  methods: {}
+  methods: {
+    // handleSelect(key, keyPath) {
+    //   console.log(key, keyPath);
+    // }
+  }
 }
 </script>
 
@@ -51,9 +73,28 @@ export default {
   font-size: 24px;
 }
 
+@media (min-width: 600px) {
+  #xsNav {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #xsNav {
+    display: inline;
+  }
+
+  #mdNav {
+    display: none;
+  }
+}
+
+.el-menu-item.is-active {
+  color: #919398;
+}
+
 i {
   font-size: 24px;
-
 }
 
 #nav {
@@ -61,6 +102,6 @@ i {
   /*height: 10vh;*/
   /*position: ;*/
   /*z-index: 1000;*/
-  /*opacity: 1;*/
+  /*opacity: 0.5;*/
 }
 </style>
